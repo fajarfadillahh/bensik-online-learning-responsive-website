@@ -1,0 +1,254 @@
+// ===== FONT GOOGLE =====
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;800&display=swap");
+// ===== VARIABLE CSS CLASS =====
+// header height
+$header-height: 6rem;
+
+// color palette
+$black-color: #0d1111;
+$white-color: #fff;
+$grey-color: #9da6a5;
+$dark-grey-color: #767e7e;
+$blue-color: #1ebfc1;
+
+// font body
+$font-body: "Open Sans", sans-serif;
+
+// font weight
+$font-reguler: 400;
+$font-medium: 500;
+$font-semibold: 600;
+$font-bold: 800;
+
+// margin
+$margin-0-5: 0.5rem;
+$margin-1: 1rem;
+$margin-1-5: 1.5rem;
+$margin-2: 2rem;
+$margin-2-5: 2.5rem;
+$margin-3: 3rem;
+$margin-3-5: 3.5rem;
+$margin-4: 4rem;
+
+// z-index
+$z-back: -10;
+$z-normal: 1;
+$z-tooltip: 10;
+$z-fixed: 100;
+
+// transition
+$transition-300: 0.3s;
+$transition-400: 0.4s;
+
+// ===== RESET & BASE =====
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-body;
+  font-weight: $font-reguler;
+}
+
+ul,
+a {
+  list-style: none;
+  text-decoration: none;
+}
+
+button,
+input {
+  font-family: $font-body;
+  font-weight: $font-reguler;
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// ===== REUSABLE CSS CLASS =====
+.container {
+  max-width: 968px;
+  width: calc(100% - 3rem);
+  margin: 0 $margin-1-5;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.main {
+  overflow: hidden;
+}
+
+.section {
+  padding: 5rem 0;
+
+  &-subtitle,
+  &-title {
+    text-align: center;
+  }
+
+  &-subtitle {
+    display: block;
+    font-size: 15px;
+    font-weight: $font-medium;
+    color: $dark-grey-color;
+    margin-bottom: $margin-1;
+  }
+
+  &-title {
+    font-size: 24px;
+    font-weight: $font-bold;
+    color: $black-color;
+  }
+}
+
+.button {
+  font-size: 15px;
+  font-weight: $font-medium;
+
+  &-fill,
+  &-border {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 2rem;
+    border-radius: 0.8rem;
+    transition: $transition-400;
+  }
+
+  &-fill {
+    color: $white-color;
+    background-color: $blue-color;
+    box-shadow: 0 10px 25px rgba($color: #000000, $alpha: 0.1);
+
+    &:hover {
+      background-color: #1bb5b8;
+      box-shadow: 0 10px 25px rgba($color: #000000, $alpha: 0.2);
+    }
+  }
+
+  &-border {
+    border: 1.5px solid $blue-color;
+    color: $blue-color;
+
+    &:hover {
+      color: $white-color;
+      background-color: $blue-color;
+      box-shadow: 0 10px 25px rgba($color: #000000, $alpha: 0.2);
+    }
+  }
+
+  &-link {
+    display: inline-flex;
+    color: $blue-color;
+    text-decoration: underline;
+  }
+}
+
+// ===== HEADER SECTION =====
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: $white-color;
+  z-index: $z-fixed;
+  transition: $transition-400;
+
+  &__container {
+    height: $header-height;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 20px;
+    font-weight: $font-bold;
+    font-style: italic;
+    color: $black-color;
+
+    &-icon {
+      width: 35px;
+    }
+  }
+
+  &__menu {
+    @media screen and (max-width: 767px) {
+      display: grid;
+      gap: 1.5rem;
+      position: fixed;
+      width: 80%;
+      top: 7rem;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      text-align: center;
+      padding: 2rem;
+      background-color: #fafafa;
+      border-radius: 1.5rem;
+      box-shadow: 0 0 8px rgba($color: #000000, $alpha: 0.1);
+      opacity: 0;
+      transform: scaleY(0);
+      transform-origin: 0% 0%;
+      transition: $transition-400;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: $margin-1-5;
+  }
+
+  &__link {
+    font-size: 15px;
+    color: $dark-grey-color;
+
+    &.active-link {
+      position: relative;
+      font-weight: $font-medium;
+      color: $black-color;
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: 1.6rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 5px;
+        height: 5px;
+        background-color: $black-color;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__toggle {
+    display: inline-flex;
+    font-size: 1.5rem;
+    color: $black-color;
+    cursor: pointer;
+  }
+
+  // Show Header Menu
+  .show-menu {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
