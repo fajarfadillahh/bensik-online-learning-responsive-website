@@ -81,7 +81,7 @@ img {
 
 // ===== REUSABLE CSS CLASS =====
 .container {
-  max-width: 968px;
+  max-width: 1024px;
   width: calc(100% - 3rem);
   margin: 0 $margin-1-5;
 }
@@ -460,5 +460,30 @@ img {
   &__button {
     display: inline-flex;
     justify-self: center;
+  }
+}
+
+// ===== COUNTDOWN SECTION =====
+.countdown {
+  &__group {
+    grid-template-columns: 0.5fr;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  &__item {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 46px;
+    font-weight: $font-bold;
+    color: $black-color;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    font-size: 15px;
+    color: $grey-color;
   }
 }
