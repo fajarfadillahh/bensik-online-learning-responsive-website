@@ -487,3 +487,30 @@ img {
     color: $grey-color;
   }
 }
+
+// ===== HANDBOOK SECTION =====
+.handbook {
+  &__container {
+    gap: 3rem;
+  }
+
+  &__data {
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    font-size: 15px;
+    color: $grey-color;
+    line-height: $leading-text;
+    margin-bottom: 2rem;
+  }
+
+  &__button {
+    display: inline-flex;
+    justify-self: center;
+  }
+}
