@@ -514,3 +514,49 @@ img {
     justify-self: center;
   }
 }
+
+// ===== NEWSLETTER SECTION =====
+.newsletter {
+  background-color: $blue-color;
+
+  &__container {
+    text-align: center;
+  }
+
+  &__title,
+  &__text {
+    color: $white-color;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__direction {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+
+    &-input {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      background-color: $white-color;
+      border-radius: 0.8rem;
+      font-size: 15px;
+      font-weight: $font-medium;
+      color: $black-color;
+      text-align: center;
+
+      &::placeholder {
+        font-size: 15px;
+        font-weight: $font-semibold;
+        color: $grey-color;
+      }
+    }
+
+    &-button {
+      background-color: $black-color;
+    }
+  }
+}
