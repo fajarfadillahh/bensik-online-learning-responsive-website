@@ -548,19 +548,20 @@ img {
       background-color: $white-color;
       border-radius: 0.8rem;
       font-size: 15px;
-      font-weight: $font-medium;
+      font-weight: $font-semibold;
       color: $black-color;
       text-align: center;
 
       &::placeholder {
         font-size: 15px;
-        font-weight: $font-semibold;
+        font-weight: $font-medium;
         color: $grey-color;
       }
     }
 
     &-button {
       background-color: $black-color;
+      cursor: pointer;
     }
   }
 }
@@ -722,5 +723,73 @@ img {
     &__toggle {
       display: none;
     }
+  }
+}
+
+// ----- width 968px -----
+@media screen and (min-width: 968px) {
+  .section-title {
+    font-size: 32px;
+  }
+
+  .home {
+    padding-top: 10rem;
+
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__data {
+      width: 100%;
+      text-align: left;
+      align-self: center;
+    }
+
+    &__text {
+      width: 380px;
+    }
+  }
+
+  .features__container,
+  .courses__container {
+    gap: 5rem;
+  }
+
+  .home__data,
+  .features__data,
+  .courses__data,
+  .handbook__data,
+  .newsletter__data,
+  .newsletter__direction {
+    width: 470px;
+  }
+
+  .handbook {
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__title,
+    &__subtitle {
+      text-align: left;
+    }
+
+    &__title {
+      font-size: 42px;
+    }
+
+    &__data {
+      width: 100%;
+      text-align: left;
+      align-self: center;
+    }
+
+    &__text {
+      width: 380px;
+    }
+  }
+
+  .footer__item {
+    justify-self: center;
   }
 }
