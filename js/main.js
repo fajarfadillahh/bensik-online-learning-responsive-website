@@ -22,3 +22,13 @@ function scrollUp() {
     : scrollup.classList.remove("scroll-action");
 }
 window.addEventListener("scroll", scrollUp);
+
+// ===== STICKY HEADER =====
+function stickyHeader() {
+  const header = document.getElementById("header");
+
+  this.scrollY > 10
+    ? header.classList.add("sticky-header")
+    : header.classList.remove("sticky-header");
+}
+window.addEventListener("scroll", stickyHeader);
