@@ -267,6 +267,10 @@ img {
     gap: 3rem;
   }
 
+  &__data {
+    text-align: center;
+  }
+
   &__subtitle {
     display: inline-flex;
     font-size: 15px;
@@ -615,5 +619,34 @@ img {
     font-weight: $font-medium;
     border-top: 1.5px solid rgba($color: #000000, $alpha: 0.1);
     padding-top: 3rem;
+  }
+}
+
+// ===== MEDIA QUERIES =====
+// ----- width 480px -----
+@media screen and (min-width: 480px) {
+  .section-title {
+    font-size: 28px;
+  }
+
+  .container {
+    margin: 0 auto;
+  }
+
+  .home__data {
+    width: 400px;
+    margin: 0 auto;
+  }
+
+  .home__title {
+    font-size: 48px;
+  }
+
+  .features__data,
+  .courses__data,
+  .handbook__data,
+  .newsletter__container {
+    width: 380px;
+    margin: 0 auto;
   }
 }
