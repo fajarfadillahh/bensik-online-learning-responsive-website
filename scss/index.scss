@@ -652,7 +652,7 @@ img {
   }
 }
 
-// ----- width 6400px -----
+// ----- width 640px -----
 @media screen and (min-width: 640px) {
   .home__title {
     font-size: 56px;
@@ -695,6 +695,32 @@ img {
       &-button {
         background-color: $blue-color;
       }
+    }
+  }
+}
+
+// ----- width 767px -----
+@media screen and (min-width: 767px) {
+  .header {
+    &__container {
+      position: relative;
+    }
+
+    &__menu {
+      display: flex;
+      align-items: center;
+    }
+
+    &__list {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      flex-direction: row;
+      gap: $margin-1-5;
+    }
+
+    &__toggle {
+      display: none;
     }
   }
 }
