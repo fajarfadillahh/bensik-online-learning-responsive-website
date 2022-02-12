@@ -645,8 +645,56 @@ img {
   .features__data,
   .courses__data,
   .handbook__data,
-  .newsletter__container {
+  .newsletter__data,
+  .newsletter__direction {
     width: 380px;
     margin: 0 auto;
+  }
+}
+
+// ----- width 6400px -----
+@media screen and (min-width: 640px) {
+  .home__title {
+    font-size: 56px;
+  }
+
+  .home__data,
+  .features__data,
+  .courses__data,
+  .handbook__data,
+  .newsletter__data,
+  .newsletter__direction {
+    width: 420px;
+  }
+
+  .countdown__group {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .newsletter {
+    background-color: transparent;
+
+    &__container {
+      padding: 5rem 0;
+      background-color: $blue-color;
+      border-radius: 1rem;
+    }
+
+    &__direction {
+      flex-direction: row;
+      justify-content: space-between;
+      background-color: $white-color;
+      padding: 0.5rem;
+      border-radius: 1rem;
+
+      &-input {
+        width: 100%;
+        text-align: left;
+      }
+
+      &-button {
+        background-color: $blue-color;
+      }
+    }
   }
 }
